@@ -1,10 +1,10 @@
 route:
-    receiver: 'slack'
+  receiver: "slack"
 
 receivers:
-    - name: 'slack'
-      slack_configs:
-          - send_resolved: true
-            username: '<username>'
-            channel: '#<channel-name>'
-            api_url: '<incomming-webhook-url>'
+  - name: "slack"
+    slack_configs:
+      - send_resolved: true
+        username: "Prometheus"
+        channel: "#general"
+        api_url: "https://hooks.slack.com/services/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"
