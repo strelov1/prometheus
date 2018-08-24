@@ -71,7 +71,7 @@ scrape_configs:
 
     dns_sd_configs:
       - names:
-          - "tasks.node-exporter"
+          - "tasks.demo-app"
         type: "A"
         port: 1337
 
