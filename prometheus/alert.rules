@@ -12,6 +12,15 @@ groups:
       summary: "Instance {{ $labels.instance }} down"
       description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
 
+  - alert: high_requests_count
+    expr: rate(http_requests_total[1m]) > 0.5
+    for: 1m
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{ $labels.instance }} is receiving unusually high requests"
+      description: "{{ $labels.instance }} of job {{ $labels.job }} has received 60 requests per minute for the last 2 minutes. This might be a DDoS attack.s"
+
   - alert: high_load
     expr: node_load1 > 0.5
     for: 2m
